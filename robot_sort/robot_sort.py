@@ -100,7 +100,7 @@ class SortingRobot:
         # move right to the next item
         self.move_right()
         # compare items: if current item is bigger, pick it up
-        if self.compare_item == 1 and self.can_move_right:
+        if self.compare_item == 1:
             self.swap_item()
             self.set_light_on()
         # other wise move back left, drop the item, then continue right
@@ -114,7 +114,7 @@ class SortingRobot:
         # move left to the front item
         self.move_left()
         # compare items: if current item is smaller, pick it up
-        if self.compare_item() == -1 and self.can_move_left:
+        if self.compare_item() == -1:
             self.swap_item()
             self.set_light_on()
         # other wise move back right, drop the item, then continue left
@@ -130,7 +130,7 @@ class SortingRobot:
         self.set_light_on()
         # loop through the list while light is on
         while self.light_is_on():
-            # turn of light when it's not swapping
+            # turn off light when it's not swapping
             self.set_light_off()
             # when robot can move to the right
             while self.can_move_right():
