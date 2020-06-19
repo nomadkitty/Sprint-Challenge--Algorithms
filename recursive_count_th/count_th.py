@@ -7,13 +7,14 @@ Your function must utilize recursion. It cannot contain any loops.
 
 def count_th(word):
     # base case: when there's no th
-    count = 0
     if word.find("th") == -1:
-        return count
+        return 0
 
-    # recursion: find and then slice the list
+    count = 0
+    # recursion: increment count, then find and then slice the list
     if word.find("th") >= 0:
         count += 1
         word = word[word.find("th")+1:]
 
+    # return the current count and recursion call
     return count + count_th(word)
